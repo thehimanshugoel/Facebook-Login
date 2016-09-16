@@ -77,7 +77,7 @@ public class Preferences {
         sharedPreferencesEditor.putString("gender", gender);
     }
 
-    public static String getBirthday() {
+    public static String getDob() {
         return sharedPreferences.getString("birthday", null);
     }
 

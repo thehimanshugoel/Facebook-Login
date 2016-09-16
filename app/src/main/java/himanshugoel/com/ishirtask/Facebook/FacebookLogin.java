@@ -57,6 +57,8 @@ public class FacebookLogin {
                                                 Log.d("Birthday", object.getString("birthday"));
                                                 Log.d("TimeZone", object.getString("timezone"));
                                                 Preferences.setUserData(activity, object, token);
+                                                LoginCallBack loginCallBack = (LoginCallBack) activity;
+                                                loginCallBack.onLogin();
                                             }
 
                                         } catch (JSONException e) {
@@ -65,7 +67,7 @@ public class FacebookLogin {
                                     }
                                 });
                         Bundle parameters = new Bundle();
-                        parameters.putString("fields", "id,name,email,gender, birthday,timezone,first_name,last_name");
+                        parameters.putString("fields", "id,name,email,gender,birthday,timezone,first_name,last_name");
                         request.setParameters(parameters);
                         request.executeAsync();
 

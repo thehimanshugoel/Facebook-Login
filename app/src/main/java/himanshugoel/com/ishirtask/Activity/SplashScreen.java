@@ -3,18 +3,20 @@ package himanshugoel.com.ishirtask.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.facebook.CallbackManager;
 import com.facebook.login.widget.LoginButton;
 
 import himanshugoel.com.ishirtask.Facebook.FacebookLogin;
+import himanshugoel.com.ishirtask.Facebook.LoginCallBack;
 import himanshugoel.com.ishirtask.R;
 import himanshugoel.com.ishirtask.Utils.Intents;
 import himanshugoel.com.ishirtask.Utils.IshirUtils;
 
-public class SplashScreen extends BaseActivity implements View.OnClickListener {
+public class SplashScreen extends BaseActivity implements View.OnClickListener, LoginCallBack {
     CallbackManager callbackManager;
-    private LoginButton btnLogin;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class SplashScreen extends BaseActivity implements View.OnClickListener {
     }
 
     public void initViews() {
-        btnLogin = (LoginButton) findViewById(R.id.connectWithFbButton);
+        btnLogin = (Button) findViewById(R.id.connectWithFbButton);
     }
 
     @Override
@@ -48,6 +50,11 @@ public class SplashScreen extends BaseActivity implements View.OnClickListener {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+    @Override
+    public void onLogin() {
         Intents.callProfilePage(SplashScreen.this);
     }
 }

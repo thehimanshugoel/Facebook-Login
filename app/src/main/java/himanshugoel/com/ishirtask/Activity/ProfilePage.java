@@ -11,6 +11,7 @@ import himanshugoel.com.ishirtask.Utils.IshirUtils;
 import himanshugoel.com.ishirtask.Utils.Preferences;
 
 public class ProfilePage extends BaseActivity {
+    String dob;
     private ImageView imgPerson;
     private TextView txtEmail;
     private TextView txtFirstName;
@@ -32,7 +33,7 @@ public class ProfilePage extends BaseActivity {
         txtFirstName.setText(Preferences.getFirstName());
         txtLastName.setText(Preferences.getLastName());
         txtEmail.setText(Preferences.getEmail());
-        txtAge.setText(IshirUtils.getAge(Preferences.getBirthday()));
+        txtAge.setText(IshirUtils.getAge(Preferences.getDob()));
         txtTimeZone.setText(Preferences.getTimeZone());
 
     }
