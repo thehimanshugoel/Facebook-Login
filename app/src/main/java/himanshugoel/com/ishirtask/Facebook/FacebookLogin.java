@@ -49,13 +49,6 @@ public class FacebookLogin {
                                             AccessToken token = AccessToken.getCurrentAccessToken();
                                             if (token != null) {
 
-                                                Log.d("User Id", object.getString("id"));
-                                                Log.d("Facebook access token", token.getToken());
-                                                Log.d("UserName", object.getString("name"));
-                                                Log.d("Email", object.getString("email"));
-                                                Log.d("Gender", object.getString("gender"));
-                                                Log.d("Birthday", object.getString("birthday"));
-                                                Log.d("TimeZone", object.getString("timezone"));
                                                 Preferences.setUserData(activity, object, token);
                                                 LoginCallBack loginCallBack = (LoginCallBack) activity;
                                                 loginCallBack.onLogin();

@@ -7,7 +7,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import himanshugoel.com.ishirtask.R;
-import himanshugoel.com.ishirtask.Utils.IshirUtils;
 import himanshugoel.com.ishirtask.Utils.Preferences;
 
 public class ProfilePage extends BaseActivity {
@@ -33,7 +32,7 @@ public class ProfilePage extends BaseActivity {
         txtFirstName.setText(Preferences.getFirstName());
         txtLastName.setText(Preferences.getLastName());
         txtEmail.setText(Preferences.getEmail());
-        txtAge.setText(IshirUtils.getAge(Preferences.getDob()));
+        txtAge.setText(Preferences.getDob());
         txtTimeZone.setText(Preferences.getTimeZone());
 
     }

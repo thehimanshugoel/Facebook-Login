@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.facebook.CallbackManager;
-import com.facebook.login.widget.LoginButton;
 
 import himanshugoel.com.ishirtask.Facebook.FacebookLogin;
 import himanshugoel.com.ishirtask.Facebook.LoginCallBack;

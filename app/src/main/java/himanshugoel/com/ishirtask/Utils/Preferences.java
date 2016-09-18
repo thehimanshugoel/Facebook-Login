@@ -20,7 +20,7 @@ public class Preferences {
         setUserName(object.getString("name"));
         setEmail(object.getString("email"));
         setGender(object.getString("gender"));
-        setDOB(object.getString("birthday"));
+        setDOB("age is restricted in development mode");
         setTimeZone(object.getString("timezone"));
         setFirstName(object.getString("first_name"));
         setLastName(object.getString("last_name"));
